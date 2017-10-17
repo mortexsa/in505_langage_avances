@@ -18,6 +18,12 @@ public:
 	~CString();
 	static int nbrChaines();
 	void afficher();
+	CString& plus(const char c);
+	char* getString();
+	bool plusGrandQue(CString& S);
+	bool infOuEgale(CString& S);
+	CString& plusGrand(CString& S);
+	CString& operator=(CString& S);
 };
 
 #endif
