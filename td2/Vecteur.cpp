@@ -62,3 +62,21 @@ ostream &operator<<(ostream &flux, Vecteur const& vecteur)
     vecteur.afficher(flux);
     return flux;
 }
+void Vecteur::operator+=(int const unEntier){
+    int i=0;
+    int *provisoir = m_intTable;
+    delete[] m_intTable;
+    m_intTable = new int[m_size+1];
+    while(i<m_size)
+    {
+        m_intTable[i] = provisoir[i];
+        i++;
+    }
+    m_intTable[m_size++] = unEntier;
+}
+Vecteur operator+(Vecteur vecteur1, int unEntier)
+{
+    Vecteur copie(vecteur1);
+    copie += unEntier;
+    return copie;
+}

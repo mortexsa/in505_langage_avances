@@ -15,8 +15,10 @@ class Vecteur {
         ~Vecteur();
         int nbrVecteur();
         void afficher(std::ostream &flux) const;
+        void operator+=(int const unEntier);
 };
 
 std:: ostream &operator<<(std::ostream &flux, Vecteur const& vecteur);
+Vecteur operator+(Vecteur vecteur1, int unEntier);
 
 #endif
