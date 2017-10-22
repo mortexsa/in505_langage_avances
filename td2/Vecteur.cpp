@@ -44,7 +44,7 @@ int Vecteur::nbrVecteur()
 void Vecteur::afficher(ostream &flux) const
 {
     int i=0;
-	if(m_size > 1){
+	if(m_size >= 1){
         flux <<"[";
         while(i<m_size)
         {
@@ -53,9 +53,6 @@ void Vecteur::afficher(ostream &flux) const
         }
         flux <<"]";
     }
-	else{
-		flux <<"Case 1: "<< m_intTable[0];
-	}
 }
 ostream &operator<<(ostream &flux, Vecteur const& vecteur)
 {
@@ -79,4 +76,21 @@ Vecteur operator+(Vecteur vecteur1, int unEntier)
     Vecteur copie(vecteur1);
     copie += unEntier;
     return copie;
+}
+Vecteur& Vecteur::operator=(const Vecteur& v){
+    if(this != &v)
+    {
+        delete[] m_intTable;
+        m_size = v.m_size;
+        m_intTable = new int[m_size];
+        for(int i=0;i<m_size;i++)
+        {
+            m_intTable[i] = v.m_intTable[i];
+        }
+    }
+    return  *this;
+}
+int& Vecteur::operator[](int position) const{
+    if( position<0 or position >= m_size)    throw out_of_range("l'indice n'ai pas contenu dans le Vecteur");
+    return this->m_intTable[position]; 
 }
