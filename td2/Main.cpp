@@ -4,7 +4,7 @@
 
 using namespace std;
 
-int main(){
+int main() {
     Vecteur test(5);
     cout<<test<<endl;
     test += 5;
