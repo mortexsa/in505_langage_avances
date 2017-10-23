@@ -4,12 +4,10 @@ using namespace std;
 int Vecteur::m_nbrVecteur = 0;
 
 Vecteur::Vecteur() {
-    m_size = 1;
-    m_intTable = new int[1];
-    m_intTable[0] = 0;
+    m_size = 0;
     m_nbrVecteur++;
 }
-Vecteur::Vecteur(int nbrEntier) {
+Vecteur::Vecteur(const int nbrEntier) {
     int i = 0;
     m_size = nbrEntier;
     m_intTable = new int[m_size];
@@ -19,7 +17,7 @@ Vecteur::Vecteur(int nbrEntier) {
     }
     m_nbrVecteur++;
 }
-Vecteur::Vecteur(Vecteur& vecteur) {
+Vecteur::Vecteur(const Vecteur& vecteur) {
     int i=0;
     m_size = vecteur.m_size;
     m_intTable = new int[vecteur.m_size];
@@ -52,20 +50,21 @@ ostream &operator<<(ostream &flux, Vecteur const& vecteur) {
     vecteur.afficher(flux);
     return flux;
 }
-void Vecteur::operator+=(int const unEntier) {
+Vecteur Vecteur::operator+=(const Vecteur& v) {
     int i=0;
-    int *provisoir = m_intTable;
+    int j=0;
+    int provisoir[m_size];
+    for(i=0;i<m_size;i++) provisoir[i] = m_intTable[i];
     delete[] m_intTable;
-    m_intTable = new int[m_size+1];
-    while(i<m_size) {
-        m_intTable[i] = provisoir[i];
-        i++;
-    }
-    m_intTable[m_size++] = unEntier;
+    m_intTable = new int[m_size+v.m_size];
+    for(i=0;i<m_size;i++) m_intTable[i] = provisoir[i];
+    m_size = m_size+v.m_size;
+    while(j<v.m_size) {m_intTable[i] = v.m_intTable[j]; j++; i++;}
+    return *this;
 }
-Vecteur operator+(Vecteur vecteur1, int unEntier) {
+Vecteur operator+(const Vecteur& vecteur1, const Vecteur& vecteur2) {
     Vecteur copie(vecteur1);
-    copie += unEntier;
+    copie += vecteur2;
     return copie;
 }
 Vecteur& Vecteur::operator=(const Vecteur& v) {

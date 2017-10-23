@@ -11,18 +11,17 @@ class Vecteur {
         static int m_nbrVecteur;
     public:
         Vecteur();
-        Vecteur(int nbrEntier);
-        Vecteur(Vecteur& vecteur);
+        Vecteur(const int nbrEntier);
+        Vecteur(const Vecteur& vecteur);
         ~Vecteur();
         int nbrVecteur();
         void afficher(std::ostream &flux) const;
-        void operator+=(int const unEntier);
+        Vecteur operator+=(const Vecteur& v);
         Vecteur& operator=(const Vecteur& v);
         int& operator[](int position) const;
-};
-
-std:: ostream &operator<<(std::ostream &flux, Vecteur const& vecteur);
-Vecteur operator+(Vecteur vecteur1, int unEntier);
+        friend std:: ostream &operator<<(std::ostream &flux, Vecteur const& vecteur);
+        friend Vecteur operator+(const Vecteur& vecteur1, const Vecteur& vecteur2);
+    };
 
 
 #endif

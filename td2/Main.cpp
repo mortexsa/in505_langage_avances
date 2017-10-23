@@ -6,15 +6,16 @@ using namespace std;
 
 int main() {
     Vecteur test(5);
+    test[0] = 1;
+    test[1] = 2;
+    test[2] = 3;
+    test[3] = 4;
+    test[4] = 5;
     cout<<test<<endl;
-    test += 5;
-    cout<<test<<endl;
-    Vecteur zebi(1);
-    cout<<zebi<<endl;
-    zebi = test + 1;
-    cout<<zebi<<endl;
-    zebi[0] = 5;
-    cout<<zebi[0]<<endl;
-    cout<<zebi<<endl;
+    Vecteur cool(1);
+    cool[0] = 6;
+    cout<<cool<<endl;
+    cool = cool+test;
+    cout<<cool<<endl;
     return 0;
 }
