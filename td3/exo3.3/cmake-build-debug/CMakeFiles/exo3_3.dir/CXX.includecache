@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/mortex/Documents/in505_langage_avances/td3/exo3.3/CFile.h
+stdio.h
+-
+CList.h
+/home/mortex/Documents/in505_langage_avances/td3/exo3.3/CList.h
+
+/home/mortex/Documents/in505_langage_avances/td3/exo3.3/CList.h
+iostream
+-
+string.h
+-
+stdlib.h
+-
+
+/home/mortex/Documents/in505_langage_avances/td3/exo3.3/CPile.h
+cstdio
+-
+CList.h
+/home/mortex/Documents/in505_langage_avances/td3/exo3.3/CList.h
+
+/home/mortex/Documents/in505_langage_avances/td3/exo3.3/main.cpp
+iostream
+-
+CList.h
+/home/mortex/Documents/in505_langage_avances/td3/exo3.3/CList.h
+CPile.h
+/home/mortex/Documents/in505_langage_avances/td3/exo3.3/CPile.h
+CFile.h
+/home/mortex/Documents/in505_langage_avances/td3/exo3.3/CFile.h
+
