@@ -1,5 +1,6 @@
 #include <iostream>
 
+
 #include "CList.h"
 #include "CPile.h"
 #include "CFile.h"
@@ -9,7 +10,7 @@ using namespace std;
 
 int main(){
 
-
+    // test sur des int et double
     CList<double> list;
     list.operator<(3.0);
     list.operator<(1.5);
@@ -29,6 +30,17 @@ int main(){
     cout << file << endl;
     file > i;
     cout << file << " la valeur de i est : " << i << endl;
+
+    //test sur des string.
+    string provisoir;
+
+    CFile<string> f;
+    CList<string> *l = &f;
+    f < "bonjour" < "je" < "suis";
+    cout << f << endl;
+    f > provisoir;
+    cout << f << " la valeur de i est : " << provisoir << endl;
+
 
     return 0;
 }
