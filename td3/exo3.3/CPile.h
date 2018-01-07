@@ -19,13 +19,13 @@ public:
 
     ~CPile(){}
 
-    CList<T> & operator>(T& entier){
+    CList<T> & operator>(T& variable){
         if (this->content == NULL) {
             std::cout << "Pile vide" << std::endl;
             exit(1);
         }
         else {
-            entier = this->content->value;
+            variable = this->content->value;
             this->content = this->content->next;
             return *this;
         }

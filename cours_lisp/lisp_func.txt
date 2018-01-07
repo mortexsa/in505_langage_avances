@@ -1,0 +1,203 @@
+http://v.vincent.u-bourgogne.fr/LISP/repertoire.html
+
+voila la liste des fonction :
+
+( = n1 n2) teste si n1=n2
+
+( <> n1 n2) teste si n1 est différent de n2
+
+( < n1 n2) teste si n1<n2
+
+( <= n1 n2) teste si n1 <= n2
+
+( > n1 n2) teste si n1>n2
+
+( >= n1 n2) teste si n1 >= n2
+
+( + n1 ... nk) retourne n1+n2+ ... +nk
+
+( - n1 ... nk) retourne n1-n2- ... -nk
+
+( * n1 ... nk) retourne n1*n2* ... *nk
+
+( / n1 n2) retourne n1/n2
+
+( 1- n) retourne n-1
+
+( 1+ n) retourne n+1
+
+( abs n) retourne la valeur absolue de n
+
+( add r1 ... rn) retourne r1+ ... +rn
+
+( add1 r) retourne r+1
+
+( and s1 ... sk) retourne le ET logique entre s1 ... sk
+
+( append l1 ... ln) concatène l1 ... ln
+
+( ascii n) retourne le caractère de code ascii n
+
+( assoc sym al) retourne la paire dont la clef est sym dans la a-liste al ou NIL
+
+( atom s) teste si s est un atome
+
+( car s) retourne le premier élément de s
+
+( cascii c) retourne le code ascii du caractère c
+
+( cdr s) retourne la liste s privée de son premier élément
+
+( concat ch1 ... chn) retourne le résultat de la concaténation des chaines 
+de caractères ch1 ... chn
+
+( cond (s1 s11 ... s1k) ... (sn sn1 ... snp)) exécute en séquence les 
+S-expréssions si1 ... sip correspondent à la premier si dont l'évaluation donne une valeur différente de NIL
+
+( cons s l) ajoute s en tête de l
+
+( copy s) retourne une copie de la S-expression s
+
+( de sym l s1 ... sn) définie la fonction de nom sym de liste d'arguments l 
+et de corps s1 ... sn
+
+( defprop sym1 s sym2) associe la valeur s à la propriété sym2 de l'atom 
+sym1. Cette fonction n'evalue pas ses arguments
+
+( div r1 r2) retourne r1/r2
+
+( end) rend le controle au systéme hôte
+
+( eq s1 s2) teste l'égalité phisique de s1 et s2
+
+( eqn r1 r2) teste si r1 = r2
+
+( equal s1 s2) teste l'égalité de s1 et s2
+
+( exit sym s1 ... sn) permet de sortir de l'échappement de nom sym après 
+avoir évalué les S-expression s1 ... sn
+
+( funcall f s1 ... sn) retourne la valeur de l'évaluation de f avec les 
+valeurs de s1 ... sn en arguments
+
+( ge r1 r2) teste si r1 = r2
+
+( get sym1 sym2)] retourne la valeur associée à la propriété sym2 de 
+l'atome sym1 ou NIL
+
+( getdef sym) retourne la définition de la fonction de nom sym
+
+( gt r1 r2) teste si r1 > r2
+
+( if s s1 ... sn) si l'évaluation de s donne vrai s1 est évaluée, sinon s2 
+... sn sont évaluées en séquence
+
+( last l) retourne la liste constituée du dernier élément de l
+
+( le r1 r2) teste si r1 <= r2
+
+( length l) retourne le nombre d'éléments de l au premier niveau
+
+( let ((sym1 s1) ... (symn sn)) S1 ... Sn) appelle une fonction anonyme de 
+corps S1 ... Sn, d'argument sym1 ... symn ayant pour valeurs initiales s1 
+... sn
+
+( list s1 ... sn) construit la liste (s1 ... sn)
+
+( load fich) charge le fichier fich en évaluant les S-expressions qui s'y 
+trouvent
+
+( lt r1 r2) teste si r1 < r2
+
+( mapc f l1 ... ln) évalue f avec le cars successifs des listes l1 ... ln 
+en arguments. Retourne toujours NIL
+
+( mapcan f l1 ... ln) construit la liste des valeurs des évaluation de f (
+avec le cars successifs des listes l1 ... ln en arguments) mais privée des 
+valeurs égales à NIL. f doit retourner une liste en résultat.
+
+( mapcar f l1 ... ln) construit la liste des valeurs des évaluation de f 
+avec le cars successifs des listes l1 ... ln en arguments
+
+( minusp n) teste si n est négatif
+
+( neqn r1 r2) teste si r1 est différent de r2
+
+( nequal s1 s2) teste si les listes s1 et s2 sont différentes
+
+( not s) inverse la valeur booléenne de s
+
+( member s l) teste si s est un élément de l au premier niveau
+
+( null s) teste si s est la liste vide ( NIL ou ())
+
+( numberp s) teste si s est un nombre
+
+( or s1 ... sn) retorne le OU logique entre s1 ... sn
+
+( plist sym) retorne la p-liste de l'atom sym
+
+( plist sym l) associe la p-liste l à l'atom sym
+
+( plusp n) teste si n est positif ou nul
+
+( pretty sym1 ... symn) édite lisiblement les fonctions de noms sym1 ... 
+symn. Cette fonction n'evalue pas ses arguments
+
+( prettyf fich sym1 ... symn) édite lisiblement les fonctions de noms sym1 
+... symn dans le fichier fich. Cette fonction n'evalue pas ses arguments
+
+( prinflush s1 ... sn) imprime les valeurs de s1 ... sn sans passer à la 
+ligne
+
+( print s1 ... sn) imprime les valeurs de s1 ... sn puis passe à la ligne
+
+( putprop sym1 s sym2) associe la valeur s à la propriété sym2 de l'atom 
+sym1
+
+( read) lit la prochaine S-expression du flux d'entrée et la retourne sans l'évaluer
+
+( rem n1 n2) retourne le reste de la division entière de n1 par n2
+
+( remprop sym1 sym2) supprime la propriété sym2 dans la p-liste de l'atom sym1
+
+( repeat s s1 ... sn) évalue s fois s1 ... sn en séquence et retourne toujours T
+
+( restore-core fich) restaure l'image mémoire contenue dans le fichier fich
+
+( reverse l) inverse l'ordre des éléments de l au premier niveau.
+
+( save-core fich) sauvgarde l'image mémoire dans le fichier fich
+
+( set s1 s2) associe la valeur de l'évaluation de s2 à l'atome résultant de l'evalu-ation de s1
+
+( setq sym s) associe la valeur de l'évaluation de s2 au symbole sym
+
+( step s) évalue la S-expression s en mode pas à pas et retourne la valeur 
+de l'évaluation de s
+
+( sub r1 ... rn) retourne r1- ... -rn
+
+( sub1 r) retourne r-1
+
+( subst s1 s2 s) substitue s1 à s2 dans s
+
+( tag sym s1 ... sn) définit un échappement de nom sym pour les S-expressions s1 ... sn et retourne la valeure de l'évaluation de sn si 
+aucune sortie d'échappement n'est rencontrée pendant l'évaluation de s1 ... sn
+
+( times r1 ... rn) retourne r1* ... *rn
+
+( trace f1 ... fn) permet de pister les fonctions f1 ... fn. Cette fonction 
+n'evalue pas ses arguments
+
+( unless s s1 ... sn) si l'évaluation de s donne NIL s1 ... sn sont évaluées en séquence
+
+( until s s1 ... sn) évalue s1 ... sn en séquence tant que l'évaluation de s donne NIL. Retourne la première évaluation de s différente de NIL
+
+( untrace f1 ... fn) suprime le pistage des fonctions f1 ... fn. Cette fonction n'evalue pas ses arguments
+
+( when s s1 ... sn) si l'évaluation de s donne vrai s1 ... sn sont évaluées en séquence
+
+( while s s1 ... sn) évalue s1 ... sn en séquence tant que l'évaluation de s donne une valeur différente de NIL. Retournr toujours NIL
+
+( zerop n) teste si n est égal à zéro

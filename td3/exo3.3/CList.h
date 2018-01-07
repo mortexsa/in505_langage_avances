@@ -39,9 +39,9 @@ class CList{
                 content = NULL;
             }
         }
-        CList& operator<(T entier) {
+        CList& operator<(T variable) {
             Element<T>* tmp = new Element<T>;
-            tmp->value = entier;
+            tmp->value = variable;
             if (content == NULL) {
                 content = tmp;
                 tmp->next = NULL;
@@ -52,14 +52,14 @@ class CList{
             }
             return *this;
         }
-        virtual CList& operator>(T& entier) {
+        virtual CList& operator>(T& variable) {
             std::cout << " je ne dispose pas de la faculter de suprimer des element d'une liste." << std::endl;
             return *this;
         }
-        T& operator[](T entier){
+        T& operator[](T variable){
             Element<T>* tmp = content;
             int compteur = 1;
-            while (tmp != NULL && compteur < entier) {
+            while (tmp != NULL && compteur < variable) {
                 tmp = tmp->next;
                 compteur++;
             }

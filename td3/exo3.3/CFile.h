@@ -15,7 +15,7 @@ public:
         this->my_type = "CFile";
     }
     ~CFile(){}
-    CList<T>& operator>(T& entier){
+    CList<T>& operator>(T& variable){
         if (this->content == NULL) {
             std::cout << "File vide" << std::endl;
             exit(1);
@@ -23,7 +23,7 @@ public:
         else {
             Element<T>* tmp = this->content->next;
             if (tmp == NULL) {
-                entier = this->content->value;
+                variable = this->content->value;
                 this->content = NULL;
                 delete tmp;
                 return *this;
@@ -34,7 +34,7 @@ public:
                     aux = tmp;
                     tmp = tmp->next;
                 }
-                entier = tmp->value;
+                variable = tmp->value;
                 aux->next = NULL;
                 return *this;
             }

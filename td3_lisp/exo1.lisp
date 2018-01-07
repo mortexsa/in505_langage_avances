@@ -1,0 +1,13 @@
+(defun min_max(x)
+	(let ((min (car x)) (max (car x)))
+		(dolist (i (cdr x))
+			(if (> i max) (setf max i))
+			(if (< i min) (setf min i))
+		)
+	(list min max)
+	)
+)
+
+(defun min_max_veteur(v)
+	(min_max (concatenate 'list v))
+)

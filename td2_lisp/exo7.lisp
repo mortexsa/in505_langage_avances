@@ -1,0 +1,10 @@
+(defun my_equal(l1 l2)
+	(cond
+		((and (atom l1) (atom l2)) (eq l1 l2))
+		((and (consp l1) (consp l2))
+			(and (my_equal (car l1) (car l2)) 
+				 (my_equal (cdr l1) (cdr l2))
+			)
+		)
+	)
+)
